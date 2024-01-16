@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gold gym</title>
+    <!-- style.css css folder me hai isliye css/css fillename aise likha hai   -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+    <style>
+
+        /* css reset karenge: so isme jo margin and padding body ki hai bydeafult usse change ker rahe hai
+           baad me hume jiss hisaab se margin and padding chaiye hogi hum overwrite ker lenge  */
+           /* inspect to see what is the bydefault margina and padding given to the body  */
+           body{
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Playball', cursive;
+            
+            /* isse jo bhi cheeez(color,image, etc) denge wo background me apply hogi and url function jiske ander hum image ka url daal sakte hai jisse background me url aa jayega ya ager system me hai to path daal sakte hai imgae ka  */
+            /* so yaha path dediya website img.abs.jpg . abs.jpg img folder me thi isliye aise likha hai -> img/abs.jpg */
+            background: url('img/barbellbhaiya.jpg');
+            height: 850px;
+
+            /* isse body me jo bhi content aur text hai uska color white rahega baad me isse change kerlenge */
+            color: white;
+           }
+
+           /*  initially sabme humne border daale hai  boxes ko adjust kerne ke liye taaki hum kya kerna hai pta chale aur kaise kerna hai aage */
+           /* initialy jab humne sabme border daala tha to left ,right,mid me to chipke hue the sab saath me because usme content ni tha */
+
+
+           /* initially ye ek ke neeche ke aa rahe hai kyuki inki display:block hai so inke saath deal kerne ke liye hum left aur right ki display inline block kerdenge jisse hum inki position adjust ker sake  and width and height adjust ker sakenge  */
+
+           /* mid ko baad me adjust karenge */
+           .left{
+               /* border:2px solid red; */
+            /* border: 2px solid yellowgreen; */
+            display: inline-block;
+
+
+            position: absolute;
+            left: 30px;
+            top: 20px;
+            }
+
+           
+
+           .mid{
+               /* border:2px solid blue; */
+               /* isko middle hum aise karenge so margin auto use kera hai humne jiske liye width set karenge and display block kerdenge*/
+               /* display: block; */
+               width:  50%;
+               margin: 22px auto;
+
+
+
+            }
+            
+            .right{
+                /* border:2px solid red; */
+
+                /* border:2px solid red; */
+                display: inline-block;
+
+                /*  so right box ko extreme right me iski position adjust kerne ke position iski absolute kerdenge  and then iski left,right,top,and bottom property ke saath iss box ki position adjust ker denge */
+                /*  so position = absolute me ye relative parent move kerta hai iss case me iska parent header hai to uske hisaab se move karega ye */
+                /* absolute me ye gap ni chodta apni jagah per */
+
+                position: absolute;
+
+                right: 30px;
+                top: 6px;
+}
+
+        .navbar li{
+            /* isse side by side aa jayenge element  */
+            display: inline-block;
+            font-size: 17px;
+
+        }    
+        .navbar li a{
+            /* so humne anchor tag me text hai unka color azure ker diya */
+            color: azure;
+            
+            /* underline htaa rahe hai isse and list-style:none se bulletins hat jate hai and line bhi shayd */
+            text-decoration: none;
+
+            /* to arrange spacing between navbar element */
+            padding:30px;
+        }
+
+        /* isse ager jab hum hover karenge element pe ya uspe click karenge to underline ho jayega text */
+        /* iski markup me jaaker padho */
+        /* navabar class me li hai and uske ander anchor tag me a.active class hai */
+        .navbar li a:hover, .navbar li a.active{
+            
+            text-decoration: underline;
+            color: rgba(63, 62, 62, 0.936);
+
+        }
+
+        /* logo waali image ko target ker rahe hai hum yah*/
+        .left img{
+            /* width di hai yaha */
+            width: 64px;
+            /* ab yaha meri img kaali hai bilkul to isko white bnana ke liye hum css ka invert function use ker rahe hai jisse imag kaali se sakfed and safed se kaali bna jati hai */
+                /* syntax of invert functtion as given below to know more search on google  */
+                /* so filter:invert(100%) likhne se hamari image safed ho gayi */
+                filter: invert(100%);
+        }
+
+        /* jo left box me logo ke neeche div me text hai usse center ker rahe hai using text-align */
+
+        .left div{
+            text-align: center;
+            font-size: 20px;
+            /* line-height: 9px; */
+        }
+
+        .btn{
+            
+            margin: 17px 2px;
+            /* button ka default color black hota hai in user agent stylesheet */
+            color: whitesmoke;
+            background-color: black;
+            padding: 3px 10px;
+            border:2px solid rgb(32, 30, 30);
+            /* border radius most of the cases me 10px work ker jata hai */
+            border-radius: 5px;
+
+            font-size: 15px;
+
+            /* cursor  ya hand bana aye jab inn button pe jaaye isliye cursor:pointer kerdenge */
+            cursor: pointer;
+
+            /* isne body se font-faimly inherit ni ki kyuki bydeafult font set ho rakhi thi so isme hum overwrite ker rahe hai body waali font-faimly daal ke  */
+            /* balloo bahai is a good font available on google font */
+            font-family: 'Playball', cursive;
+            
+
+        }
+
+        /* hover karenge to kuch changes honge button pe */
+        .btn:hover{
+
+            color:black ;
+            background-color: whitesmoke;
+        }
+
+        .container{
+             /* border: 2px solid yellow; */
+             margin: 320px 4px;
+             padding: 20px 20px;
+             width: 33%;
+             border-radius: 10px;
+             font-family: 'Lobster', cursive;
+        }
+
+        /* isse jo form-group class ke ander input hai wo target honge */
+        .form-group input{
+            /* isse jo input me placeholder ke ander likha hai wo center me dikhega */
+            text-align: center;
+            /* isse element block ban jata hai as input element inline-block hote hai bydeafult */
+            /* display: block; */
+            width: 200px;
+            padding: 10px;
+            border: 2px solid black;
+            /* margin: 10px auto; */
+            margin: 12px 20px; 
+            border-radius: 10px;
+            font-family: 'Shadows Into Light', cursive;
+            font-size: 17px;
+        }
+
+        .container h2{
+            /* heading wala text center me aa jayega isse */
+            text-align: center;
+        }
+
+        /* container ke ander jo button hai usse target kiya hai */
+        .container button{
+
+            /* margin ko auto kerne ke liye display ko block kiya button ke and usse width di */
+            display: block;
+            width: 50%;
+            margin: 8px 86px;
+            border-radius: 8px;
+        }
+        #box1{
+            margin:12px 32px;
+        }
+
+        #box2{
+            margin:12px 44px;
+        }
+    </style>
+</head>
+<body>
+
+<!--write free stock image on google then go to any website and get images from any website 
+    ->pixabay,pexels,unsplash etc-->
+
+<!-- while making project create one folder for css and one for js since it is a good practice  -->
+
+<!-- search website template on google to get idea about making website and use inspect on website to see how their websites have been made
+         -->
+
+  <!--so hum isme navigation menu banana chah rahe hai saath me ek form jisse gym join ker sake form bherke and kuch buttons  -->
+
+  <header class="header">
+    <!-- left div for logo -->
+    <div class="left">
+        <img src="img/logo.png" alt="">
+        <div>gold gym</div>
+    </div>
+
+    <!-- mid div for navigation menu -->
+    <div class="mid">
+      <!-- so isme ab navbar banayenge website using ul and li and a tag -->
+      <ul class="navbar">
+        <!-- class="active ka mtlb ager hum home wale page  pe hai to wo alag sa dikhega mtlb uska color ya background kuch bhi alag dikha sakte hai jaise humne property daal rakhi hogi active class  me"  see in its css and understand carefully-->
+        <!-- <li><a href="#" class="active" >home</a></li> -->
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Fitness programs</a></li>
+        <li><a href="#">Contact us</a></li>
+      </ul>
+    </div>
+
+    <!-- right div for buttons -->
+    <div class="right">
+       <button class="btn">Call us</button>
+       <button class="btn">Email us</button>
+    </div>
+
+  </header>
+
+
+    <!--yaha hum (landing page or form banayenge)  uss form me hum basic information lenge aur apne 
+    gym ke discount ke baare me batunga aur puchenge ki aap hamre gym me ana chahenge  -->
+   <div class="container">
+        <h2>The body achieves what the mind believes.</h2>
+
+        <!-- yaha humne from daal diya iska mtlb ye ni hai ki form fill ker sakte ho uske liye backend ki need hogi but backend hai ni yaha hamare paas so hum yaha noaction.php likh rahe hai iska mtlb ye hai ki ye sara data noaction.php me jayega joki koi backend developer ne likhi hogi so noaction.php koi protocol ni hai jisse hum use karenge humne bus script assume kerte hue likha hai noaction.php -->
+        <form action="noaction.php">
+
+
+        <div class="form-group">
+            <label for=""> Name:</label>
+            <input type="text" name="" id="box1" placeholder="Enter your  name">
+        </div> 
+        <div class="form-group">
+            <label for="">Age:</label>
+            <input type="number" name="" id="box2" placeholder="Enter your age">
+        </div> 
+        <div class="form-group">
+            <label for="">Gender:</label>
+            <input type="text" name=""  id="box3" placeholder="Enter your gender">
+        </div> 
+        <div class="form-group">
+            <label for="">Locality</label>
+            <input type="password" name=""  id="box4"  placeholder="Enter your locality">
+        </div> 
+
+        <button class="btn">Submit</button>
+    </form>
+
+    </div>
+
+
+    <!-- hum positioning achieve kerne ke liye flexbox and float ka use bhi ker sakte hai but humne jo padha hai abhi tak hum wo sab apply ker rahe hai-->
+
+    <!-- hum computed me jaa sakte hai chrome developer tool me jisee saari value ka computation dikh jayega like padding, margin etc jisse position adjust ker sakenge and others-->
+
+    <!--watch code with harry vide-> best and fastest way to design beautiful website -->
+
+    <!-- ballu bhaijan is a good font  -->
+
+</body>
+</html>
